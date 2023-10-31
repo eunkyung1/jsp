@@ -24,7 +24,19 @@
 <![endif]-->
 <script type="text/javascript">
 $(document).ready(function() {
-	
+	$("#sbtn").click(function(){
+		if($("#loginType").val()<3){
+			alert("아이디는 3자리이상 작성하셔야 합니다.")
+			return false;
+		}
+		
+		if($("#passType").val()<2){
+			alert("비밀번호는 2자리이상 작성하셔야 합니다.")
+			return false;
+		}
+		frm.submit();
+		
+	});//click
 
 
 });
@@ -81,6 +93,8 @@ $(document).ready(function() {
 		$("#ieUser").hide();
         clearTimeout(msietimer);
      }
+     
+
 </script>
 
 <div id="allwrap">
@@ -197,11 +211,11 @@ $(document).ready(function() {
 			<div id="left">
 				<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>
 				<ul>	
-					<li><a href="#" id="leftNavi1">로그인</a></li>
-					<li><a href="#" id="leftNavi2">회원가입</a></li>
-					<li><a href="#" id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>
-					<li><a href="#" id="leftNavi4">회원약관</a></li>
-					<li><a href="#" id="leftNavi5">개인정보<span>취급방침</span></a></li>
+					<li><a id="leftNavi1">로그인</a></li>
+					<li><a id="leftNavi2">회원가입</a></li>
+					<li><a id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>
+					<li><a id="leftNavi4">회원약관</a></li>
+					<li><a id="leftNavi5">개인정보<span>취급방침</span></a></li>
 					<li class="last"><a href="#" id="leftNavi6">이메일무단<span>수집거부</span></a></li>
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(1,0);</script>
@@ -209,17 +223,19 @@ $(document).ready(function() {
 
 			<!-- contents -->
 			<div id="contents">
+				<form name="frm" method="post" action="../MC">
+					
 				<div id="member">
 					<h2><strong>로그인</strong><span>로그인 후 주문하시면 다양한 혜택을 받으실 수 있습니다.</span></h2>
 					<h3>회원 로그인</h3>
 					<div class="informbox">
 						<div class="inform">
 							<ul>
-								<li><input type="text" class="loginType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
-								<li><input type="password" class="passType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<li><input type="text" name="id" id="loginType" class="loginType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<li><input type="password" name="pw" id="passType" class="passType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
 							</ul>
 
-							<div class="btn"><a href="#" class="sbtn">로그인</a></div>
+							<div class="btn"><a id ="sbtn" class="sbtn">로그인</a></div>
 							<div class="chk"><input type="checkbox" id="idsave"/><label for="idsave">아이디 저장</label></div>							
 
 							<div class="point">
@@ -249,6 +265,7 @@ $(document).ready(function() {
 
 				</div>
 			</div>
+			</form>
 			<!-- //contents -->
 
 
