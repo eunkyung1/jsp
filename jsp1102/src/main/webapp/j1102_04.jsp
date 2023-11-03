@@ -33,8 +33,8 @@
 			for(int i=0;i<5;i++){
 				out.println(Str_num.charAt(i)+"<br>");
 				sum += (Str_num.charAt(i)-'0');
+			}	
 				out.println(sum);
-			}
 			
 			
 		//소문자->대문자  a:97,A:65,0:48
