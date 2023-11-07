@@ -76,6 +76,7 @@
 		<br>
 		<hr>
 		
+		<!-- 쿠기 삭제 부분  -->
 		<h1>쿠키 삭제</h1>
 		<form name="co_frm" method="post" action="co_doDelete.jsp">
 		<label>쿠키이름</label>
