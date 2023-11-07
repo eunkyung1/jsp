@@ -36,7 +36,7 @@
 			bno = rs.getInt("bno");
 			btitle = rs.getString("btitle");
 			bcontent = rs.getString("bcontent");
-			bdate = rs.getString("bdate");
+			bdate = rs.getString("bdate")+"";//날짜
 			//Timestamp e = rs.getTimestamp("bdate");
 			id = rs.getString("id");
 			bgroup = rs.getInt("bgroup");
